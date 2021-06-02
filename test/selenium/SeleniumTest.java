@@ -51,14 +51,7 @@ public class SeleniumTest {
     /**
      * Test of main method, of class Selenium.
      */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Selenium.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+  
     
     @Test
     public void testDN1() {
@@ -68,7 +61,7 @@ public class SeleniumTest {
         txtusername.sendKeys("hungitptit");
         txtpass.sendKeys("manutd1998");
         driver.findElement(By.id("buttonLogin")).click();
-        String expected_url="http://localhost:8080/Hospital/LoginSuccess.jsp";
+        String expected_url="http://localhost:8080/hospital/home.jsp";
         String actual_url= driver.getCurrentUrl();
         assertEquals(expected_url, actual_url);
     }
@@ -78,13 +71,23 @@ public class SeleniumTest {
         WebElement txtusername= driver.findElement(By.id("tvUserName"));
         WebElement txtpass= driver.findElement(By.id("txPassword"));
         
-        txtusername.sendKeys("huynghiem");
-        txtpass.sendKeys("12345");
+        txtusername.sendKeys("huynghiem1999");
+        txtpass.sendKeys("123456");
         driver.findElement(By.id("buttonLogin")).click();
-        String expected_url="http://localhost:8080/Hospital/LoginSuccess.js";
+        String expected_url="http://localhost:8080/hospital/home.jsp";
         String actual_url= driver.getCurrentUrl();
         assertEquals(expected_url, actual_url);
     }
 
-    
+    public void testDN3() {
+        WebElement txtusername= driver.findElement(By.id("tvUserName"));
+        WebElement txtpass= driver.findElement(By.id("txPassword"));
+        
+        txtusername.sendKeys("huyn");
+        txtpass.sendKeys("123456");
+        driver.findElement(By.id("buttonLogin")).click();
+        String expected_url="http://localhost:8080/hospital/Login.jsp";
+        String actual_url= driver.getCurrentUrl();
+        assertEquals(expected_url, actual_url);
+    }
 }

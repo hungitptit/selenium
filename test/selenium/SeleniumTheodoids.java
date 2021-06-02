@@ -98,8 +98,8 @@ public class SeleniumTheodoids {
             
             Thread.sleep(500);
             WebElement tbl = driver.findElement(By.id("table"));
-             assertEquals(tbl, null);
-            //Assert.assertNull(tbl);
+             
+            Assert.assertNull(tbl);
 
         }catch (Exception e) {
 		}
